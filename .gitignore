@@ -1,6 +1,4 @@
-﻿*.class
-
-# Mobile Tools for Java (J2ME)
+﻿# Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
@@ -12,3 +10,6 @@
 hs_err_pid*
 .settings/
 .project
+test.txt
+tt.txt
+*.class
