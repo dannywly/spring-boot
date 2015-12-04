@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import com.qq.weixin.mp.aes.AesException;
 import com.qq.weixin.mp.aes.SHA1;
@@ -22,11 +21,11 @@ public class SwpCommonController extends SwpAbstractController {
 	
 	@RequestMapping("/test")
 	public ModelAndView test() {
-//		System.out.println("this is test case");
-//		ModelAndView mv = new ModelAndView("home");
-		ModelAndView mv = new ModelAndView();
-		RedirectView view = new RedirectView("http://www.baidu.com");
-		mv.setView(view);
+		System.out.println("this is test case");
+		ModelAndView mv = new ModelAndView("home");
+//		ModelAndView mv = new ModelAndView();
+//		RedirectView view = new RedirectView("http://www.baidu.com");
+//		mv.setView(view);
 		return mv;
 	}
 	
@@ -65,8 +64,9 @@ public class SwpCommonController extends SwpAbstractController {
 		
 		if (TEXT_TYPE.equals(msgType)) {
 			if ("1".equals(content)) {
-				message = AutoReplyMessageUtil.autoReplyFun1(toUserName, fromUserName);
-				getAccessToken();
+				message = AutoReplyMessageUtil.autoReplyMpNews(toUserName, fromUserName);
+//				message = AutoReplyMessageUtil.autoReplyFun1(toUserName, fromUserName);
+				//getAccessToken();
 			} else if ("2".equals(content)) {
 				message = AutoReplyMessageUtil.autoReplyFun2(toUserName, fromUserName);
 			}else if ("3".equals(content)) {

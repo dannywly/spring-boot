@@ -2,21 +2,15 @@ package com.school.project.framework.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
 
 import com.school.project.framework.exceptions.SwpException;
 import com.school.project.framework.exceptions.XmlToObjectFailException;
@@ -68,7 +62,7 @@ public class XmlUtil {
 	 */
 	public static String objectToXml(Object obj) {
 		XStream stream = new XStream();
-		stream.alias("xml", obj.getClass());
+		stream.processAnnotations(obj.getClass());
 		String xml = stream.toXML(obj);
 		return xml;
 	}
@@ -94,7 +88,7 @@ public class XmlUtil {
 	 * @param xml
 	 * @return
 	 */
-	public static <T> T xmlToObject(Class<? extends T> c, String xml) {
+	/*public static <T> T xmlToObject(Class<? extends T> c, String xml) {
 		Serializer serializer = new Persister();
 		try {
 			T obj = serializer.read(c, xml);
@@ -117,5 +111,5 @@ public class XmlUtil {
 			e.printStackTrace();
 		}
 		return xml.toString();
-	}
+	}*/
 }

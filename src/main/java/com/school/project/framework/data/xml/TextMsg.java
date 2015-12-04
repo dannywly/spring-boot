@@ -2,17 +2,14 @@ package com.school.project.framework.data.xml;
 
 import java.io.Serializable;
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Root;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @SuppressWarnings("serial")
-@Root(name = "xml")
-public class TextMessage extends BaseMessage implements Serializable{
+@XStreamAlias("xml")
+public class TextMsg extends BaseMsg implements Serializable{
 	
-	@Element
 	private String Content;
 	
-	@Element
 	private String MsgId;
 
 	public String getContent() {

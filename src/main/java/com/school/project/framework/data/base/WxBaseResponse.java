@@ -1,6 +1,7 @@
 package com.school.project.framework.data.base;
 
 public class WxBaseResponse {
+	
 	private int errorcode;
 	
 	private String errormsg;

@@ -1,18 +1,12 @@
 package com.school.project.framework.data.xml;
 
-import org.simpleframework.xml.Element;
-
-public class BaseMessage {
-	@Element
+public class BaseMsg {
 	private String ToUserName;
 	
-	@Element
 	private String FromUserName;
 	
-	@Element
 	private long CreateTime;
 	
-	@Element
 	private String MsgType;
 
 	public String getToUserName() {
